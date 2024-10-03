@@ -26,6 +26,7 @@ void append(DynamicArray* array, void* element, size_t size){
             array->data = realloc(array->data, array->maxelements * size);
         }
         memcpy((char *) array->data + (array->size * size), element, size);
+        if(array == NULL || array->data == NULL) throw();
         array->size++;
     } catch{
         error("RUN", "Caught an exception while allocating a data to an array!");
