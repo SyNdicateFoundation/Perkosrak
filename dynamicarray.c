@@ -1,7 +1,7 @@
 #include "dynamicarray.h"
 
 DynamicArray* make_array(size_t maxelements) {
-    DynamicArray *new_array = (DynamicArray *) malloc(sizeof(DynamicArray));
+    DynamicArray* new_array = (DynamicArray*) malloc(sizeof(DynamicArray));
     try
     {
         new_array->data = malloc(maxelements);
@@ -30,5 +30,31 @@ void append(DynamicArray* array, void* element, size_t size){
         array->size++;
     } catch{
         error("RUN", "Caught an exception while allocating a data to an array!");
+    }
+}
+char* toString(DynamicArray* array) {
+    try
+    {
+        if (array == NULL || array->data == NULL || array->size == 0)throw();
+
+        size_t str_size = array->size * 12 + 2;
+        char* result = (char*) malloc(str_size);
+        strcpy(result, "[");
+
+        for (size_t i = 0; i < array->size; i++) {
+            char buffer[12];
+            sprintf(buffer, "%d", ((int *) array->data)[i]);
+
+            strcat(result, buffer);
+
+            if (i < array->size - 1)
+                strcat(result, ", ");
+        }
+
+        strcat(result, "]");
+        return result;
+    } catch{
+        error("RUN", "converting an array to a string resulted in an error.");
+        return "[]";
     }
 }

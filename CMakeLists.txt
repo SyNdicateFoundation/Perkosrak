@@ -14,4 +14,5 @@ add_executable(Perkosrak main.c
         logger.c
         dynamicarray.h
         dynamicarray.c
+        hashmap.h
 )

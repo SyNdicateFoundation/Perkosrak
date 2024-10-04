@@ -1,6 +1,7 @@
 #include "cutils.h"
 #include "logger.h"
-#include<math.h>
+#include "thread.h"
+#include "dynamicarray.h"
 
 /*void dos(void* index) {
     if (index == NULL)
@@ -8,8 +9,14 @@
 
     info("RUN", (char *) index);
 }*/
+
 int main() {
-   /* char strings[][maxStringLength] = {
+    DynamicArray* array = make_array(2);
+    append(array, "t", sizeof("t"));
+    append(array, "ss", sizeof("ss"));
+
+    printf("%s", toString(array));
+/* c(array(array, ), )har strings[][maxStringLength] = {
             "privet\n",
             "test\n",
             "test2\n"
@@ -22,7 +29,6 @@ int main() {
     }
 
     foreachstring(NULL, sizeof(strings) / sizeof(strings[0]), dos);*/
-
 
     return 0;
 }
