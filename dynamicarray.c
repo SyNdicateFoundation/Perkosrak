@@ -18,7 +18,7 @@ void free_array(DynamicArray* array){
     free(array->data);
     free(array);
 }
-void append(DynamicArray* array, void* element, size_t size){
+void append_array(DynamicArray* array, void* element, size_t size){
     try
     {
         if (array->size >= array->maxelements) {
@@ -32,7 +32,7 @@ void append(DynamicArray* array, void* element, size_t size){
         error("RUN", "Caught an exception while allocating a data to an array!");
     }
 }
-char* toString(DynamicArray* array) {
+char* array_toString(DynamicArray* array) {
     try
     {
         if (array == NULL || array->data == NULL || array->size == 0)throw();

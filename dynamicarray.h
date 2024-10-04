@@ -12,6 +12,6 @@ typedef struct dynamicarray{
 
 DynamicArray* make_array(size_t initial_capacity);
 void free_array(DynamicArray* array);
-void append(DynamicArray* array, void* element, size_t element_size);
-char* toString(DynamicArray* array);
+void append_array(DynamicArray* array, void* element, size_t element_size);
+char* array_toString(DynamicArray* array);
 #endif //PERKOSRAK_DYNAMICARRAY_H

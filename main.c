@@ -11,11 +11,6 @@
 }*/
 
 int main() {
-    DynamicArray* array = make_array(2);
-    append(array, "t", sizeof("t"));
-    append(array, "ss", sizeof("ss"));
-
-    printf("%s", toString(array));
 /* c(array(array, ), )har strings[][maxStringLength] = {
             "privet\n",
             "test\n",
