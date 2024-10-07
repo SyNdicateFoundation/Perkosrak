@@ -2,10 +2,15 @@
 #define PERKOSRAK_CUTILS_H
 
 #include<setjmp.h>
-#include<activation.h>
+#include "logger.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 extern jmp_buf buffer;
 #define maxStringLength 255
+
 
 #define try if (setjmp(buffer) == 0)
 #define catch else
@@ -14,7 +19,7 @@ extern jmp_buf buffer;
 
 typedef void (*func)(void*);
 
-void foreach(void* array, int size, func func);
-void foreachstring(void* array, int size, func func);
-
+void foreach(const void* array, int size, func func);
+void foreachstring(const void* array, int size, func func);
+char* format(const char* formatIn, ...);
 #endif //PERKOSRAK_CUTILS_H

@@ -1,9 +1,10 @@
 #include "./cutils.h"
-#include "logger.h"
+
+
 
 jmp_buf buffer;
 typedef void (*func)(void*);
-void foreach(void* array, int size, func func) {
+void foreach(const void* array, int size, func func) {
     try
     {
         if(array == NULL || func == NULL)
@@ -12,10 +13,10 @@ void foreach(void* array, int size, func func) {
             func((void *) array + i);
         }
     } catch{
-        error("RUN", "an error happened while iterating through variables.");
+        error("FE", "an error happened while iterating through variables.");
     }
 }
-void foreachstring(void* array, int size, func func) {
+void foreachstring(const void* array, int size, func func) {
     try{
         if(array == NULL || func == NULL)
             throw();
@@ -23,6 +24,22 @@ void foreachstring(void* array, int size, func func) {
             func((void*)array + i * 255);
         }
     }catch{
-        error("RUN", "an error happened while iterating through variables.");
+        error("FE", "an error happened while iterating through variables.");
     }
+}
+char* format(const char* fmt, ...) {
+    char buffer[maxStringLength];
+    va_list args;
+
+    va_start(args, fmt);
+    vsnprintf(buffer, sizeof(buffer), fmt, args);
+    va_end(args);
+
+    char* result = malloc(strlen(buffer) + 1);
+
+    if(!result || result == NULL) return "NULL";
+
+    strcpy(result, buffer);
+
+    return result;
 }

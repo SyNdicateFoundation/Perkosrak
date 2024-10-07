@@ -15,4 +15,6 @@ add_executable(Perkosrak main.c
         dynamicarray.h
         dynamicarray.c
         hashmap.h
+        garbagecollector.c
+        garbagecollector.h
 )

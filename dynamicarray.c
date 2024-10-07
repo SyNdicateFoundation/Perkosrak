@@ -10,7 +10,7 @@ DynamicArray* make_array(size_t maxelements) {
 
         if(new_array == NULL || new_array->data == NULL) throw();
     } catch{
-        error("RUN", "Caught an exception while allocating an array!");
+        error("DA", "Caught an exception while allocating an array!");
     }
     return new_array;
 }
@@ -29,7 +29,7 @@ void append_array(DynamicArray* array, void* element, size_t size){
         if(array == NULL || array->data == NULL) throw();
         array->size++;
     } catch{
-        error("RUN", "Caught an exception while allocating a data to an array!");
+        error("DA", "Caught an exception while allocating a data to an array!");
     }
 }
 char* array_toString(DynamicArray* array) {
@@ -54,7 +54,7 @@ char* array_toString(DynamicArray* array) {
         strcat(result, "]");
         return result;
     } catch{
-        error("RUN", "converting an array to a string resulted in an error.");
+        error("DA", "converting an array to a string resulted in an error.");
         return "[]";
     }
 }

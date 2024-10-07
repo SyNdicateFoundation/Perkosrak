@@ -1,7 +1,7 @@
 #include "cutils.h"
 #include "logger.h"
-#include "thread.h"
 #include "dynamicarray.h"
+#include "garbagecollector.h"
 
 /*void dos(void* index) {
     if (index == NULL)
@@ -24,6 +24,9 @@ int main() {
     }
 
     foreachstring(NULL, sizeof(strings) / sizeof(strings[0]), dos);*/
+    allocate(sizeof(int));
+    allocate(sizeof(int));
 
+    gc_call();
     return 0;
 }

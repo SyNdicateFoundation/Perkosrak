@@ -2,8 +2,10 @@
 #define PERKOSRAK_DYNAMICARRAY_H
 #include<stdlib.h>
 #include<stdio.h>
+#include "string.h"
 #include "cutils.h"
 #include "logger.h"
+
 typedef struct dynamicarray{
     void* data;
     size_t size;
