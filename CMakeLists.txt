@@ -17,4 +17,6 @@ add_executable(Perkosrak main.c
         hashmap.h
         garbagecollector.c
         garbagecollector.h
+        blockallocator.h
+        blockallocator.c
 )
