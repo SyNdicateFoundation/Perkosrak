@@ -1,32 +1,35 @@
 # Perkosrak - A C utility library that helps you to code more modern.
 
 ## Overview
-
-- This project isn't done yet. commits are welcomed.
-
-
 ### Key Features 🚀
+Console Parser: Efficient console argument parser
 
-Optimized - this project focuses on being optimized in many terms.
-Many helpers - this project helps you to code more efficient, without having to change the base logics.
-Ability to change codes - this project allows you to change it's codes in case of making it better, and more efficient.
 
 ## Getting Started 🚧
 
-## Using in your code:
-- You can just add codes in your project.
-## To run your codes based on it:
-- you should also include the library libpthread-1.dll, which is ported by POSIX Threads for Windows (just rename the dll from the original name to libpthread-1.dll to make it work.)
+## Installation
+1. Clone the repository
+```
+git clone https://github.com/SyNdicateFoundation/Perkosrak.git
+```
 
-## TODO 📝
-- add more efficient features
-- optimize foreach loop
-- fix issues
+2. Include necessary files
 
-## Credits:
-- thanks to BungeeCord by SpigotMC for their hard work.
-- thanks to Waterfall by PaperMC to make stuff easier for us.
-- thanks to whom who helped in designing a better GUI.
+```
+#include "consoleparser.h"
+#include "cutils.h"
+#include "dynamicarray.h"
+#include "garbagecollector.h"
+#include "logger.h"
+#include "safety.h"
+#include "thread.h"
+#include "blockallocator.h"
+```
+
+3. Link the library in your project's build process
+
+## Usage
+For usage examples, check out the wiki.
 
 ## Contribution Guidelines 
 
